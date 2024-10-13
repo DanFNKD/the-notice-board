@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-d+%4(!(_mfvyas2puhwyxams)ycoyvj*f04#@&==oybd=#cg0&
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-danfnkd-thenoticeboard-eydr70kj2wu.ws.codeinstitute-ide.net', 'localhost', '127.0.0.1'
+    '8000-danfnkd-thenoticeboard-eydr70kj2wu.ws.codeinstitute-ide.net', 'localhost', '127.0.0.1',
     '.herokuapp.com'
     ]
 
