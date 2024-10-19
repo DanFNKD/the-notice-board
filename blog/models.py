@@ -25,10 +25,19 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, related_name="posts")
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
+
+    def total_votes(self):
+        return sum(vote.value for vote in self.votes.all())
+
+    def upvote_count(self):
+        return self.votes.filter(value=1).count()
+
+    def downvote_count(self):
+        return self.votes.filter(value=-1).count()
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -40,7 +49,23 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ["created_on"]
 
     def __str__(self):
         return f"Comment by {self.author} on {self.post.title}"
+
+class Vote(models.Model):
+    UPVOTE = 1
+    DOWNVOTE = -1
+    VOTE_CHOICES = (
+        (UPVOTE, "Upvote"),
+        (DOWNVOTE, "Downvote"),
+    )
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="votes")
+    value = models.SmallIntegerField(choices=VOTE_CHOICES)
+
+    class Meta:
+        unique_together = ("user", "post")
+
