@@ -1,0 +1,186 @@
+/* Background and Body */
+body {
+    background-color: #F0F0F5;
+}
+
+/* Brand Logo */
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #002147;
+}
+
+.bold-red {
+    color: #C8102E;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Navigation Links Styling */
+.navbar-light .navbar-nav .nav-link {
+    color: #002147;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #C8102E;
+}
+
+.navbar-text {
+    color: #002147;
+}
+
+/* Background Colors */
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #002147;
+}
+
+.main-bg {
+    background-color: #F9FAFC;
+}
+
+/* Cards */
+.card {
+    border: none;
+    background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image and Author Styling */
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #C8102E;
+}
+
+.scale {
+    width: 100%;
+    height: auto;
+}
+
+.author {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+/* Masthead Section */
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+    background-color: #002147;
+    color: white;
+}
+
+.masthead-text {
+    background-color: #002147;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #C8102E;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+/* Post Links */
+.post-link {
+    text-decoration: none;
+    color: #002147;
+}
+
+.post-link:hover,
+.page-link {
+    color: #C8102E;
+}
+
+.post-title {
+    margin-top: 10%;
+    margin-left: 5%;
+    color: #002147;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+/* Buttons */ 
+.btn-signup,
+.btn-edit {
+    background-color: #C8102E;
+    color: #fff;
+    border: none;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #002147;
+    color: #fff;
+}
+
+.btn-like {
+    color: #C8102E;
+    border: none;
+    background: transparent;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #C8102E;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #C8102E;
+    background: transparent;
+    border: none;
+}
+
+/* Links */
+.link {
+    color: #002147;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #C8102E;
+    text-decoration: underline;
+}
+
+.faded {
+    color: rgb(172, 175, 175);
+}
+
+.approval {
+    color: rgb(222, 146, 168);
+}
