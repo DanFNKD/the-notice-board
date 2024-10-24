@@ -11,12 +11,23 @@ body {
     color: #002147;
 }
 
-.red-o {
+.bold-red {
+    color: #C8102E;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Navigation Links Styling */
+.navbar-light .navbar-nav .nav-link {
+    color: #002147;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
     color: #C8102E;
 }
 
-.thin {
-    font-weight: 300;
+.navbar-text {
+    color: #002147;
 }
 
 /* Background Colors */
@@ -149,7 +160,7 @@ body {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #C8102E;
     background: transparent;
     border: none;
 }
