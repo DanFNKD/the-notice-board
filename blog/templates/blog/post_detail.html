@@ -32,6 +32,48 @@
             </div>
         </div>
     </div>
+    <!-- Displaying comment count -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="far fa-comments" aria-label="Number of comments"></i> {{ comment_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+    <!-- Displaying comments -->
+     <div class="row">
+        <div class="col-md-8 card mb-4 mt-3">
+            <h3 class="card-title">Comments</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                    <article class="mb-3
+                        {% if not comment.approved %}
+                            {% if comment.author == user %} text-muted{% else %} d-none{% endif %}
+                        {% endif %}
+                    ">
+                        <p class="font-weight-bold">
+                            {{ comment.author }}
+                            <span class="font-weight-normal">
+                                {{ comment.created_on }}
+                            </span> wrote: 
+                        </p>
+                        <div id="comment{{ comment.id }}">
+                            {{ comment.body | linebreaks }}
+                        </div>
+
+                    {% if not comment.approved and comment.author == user %}
+                        <p class="approval text-warning">
+                            This comment is awaiting approval.
+                        </p>
+                    {% endif %}
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+     </div>
 </div>
 
 {% endblock content %}
