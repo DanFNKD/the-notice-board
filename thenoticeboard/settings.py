@@ -27,7 +27,7 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-danfnkd-thenoticeboard-eydr70kj2wu.ws.codeinstitute-ide.net', 'localhost', '127.0.0.1',
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_summernote',
     'blog',
+    'about',
 ]
 
 SITE_ID = 1
