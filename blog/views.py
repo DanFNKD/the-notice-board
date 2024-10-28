@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from .models import Post
+from .models import Post, Vote
+from django.contrib.auth.decorators import login_required
 from .forms import CommentForm
 
 # Create your views here.
@@ -12,6 +13,7 @@ class PostList(generic.ListView):
     template_name = "blog/index.html"
     paginate_by = 6
 
+# Detail view for a post 
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
@@ -52,3 +54,21 @@ def post_detail(request, slug):
             "comment_form": comment_form
         },
     )
+
+# voting for upvoting and downvoting
+@login_required
+def vote(request, post_id, vote_value):
+    post = get_object_or_404(Post, id=post_id)
+    vote_value = int(vote_value)
+
+    vote, created = Vote.objects.update_or_create(
+        user=request.user, post=post,
+        defaults={'value': vote_value}
+    )
+
+    if created:
+        messages.success(request, "Thank you for your feedback!")
+    else:
+        messages.info(request, "You have already voted on this post.")
+
+    return redirect('post_detail', slug=post.slug)
