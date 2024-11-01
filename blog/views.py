@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from .models import Post, Vote
 from django.contrib.auth.decorators import login_required
-from .forms import CommentForm
+from .forms import PostForm, CommentForm
 
 # Create your views here.
 
@@ -54,6 +54,22 @@ def post_detail(request, slug):
             "comment_form": comment_form
         },
     )
+
+# creating a post
+@login_required
+def create_post(request):
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.status = 1
+            post.save()
+            messages.success(request, "Your post is live!")
+            return redirect("post_detail", slug=post.slug)
+    else:
+        form = PostForm()
+    return render(request, "blog/create_post.html", {"form": form})
 
 # voting for upvoting and downvoting
 @login_required
