@@ -65,6 +65,9 @@ def create_post(request):
             post.author = request.user
             post.status = 1
             post.save()
+            if not post.slug:
+                post.slug = slugify(post.title)
+                post.save()
             messages.success(request, "Your post is live!")
             return redirect("post_detail", slug=post.slug)
     else:

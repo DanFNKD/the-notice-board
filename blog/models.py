@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -38,6 +39,11 @@ class Post(models.Model):
 
     def downvote_count(self):
         return self.votes.filter(value=-1).count()
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        models.Model.save(self, *args, **kwargs)
 
 class Comment(models.Model):
     post = models.ForeignKey(
