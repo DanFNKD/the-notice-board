@@ -1,4 +1,4 @@
-from .models import Post, Comment
+from .models import Post, Comment, UserProfile
 from django import forms
 
 class PostForm(forms.ModelForm):
@@ -19,3 +19,8 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'body': forms.Textarea()
         }
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['bio', 'location']

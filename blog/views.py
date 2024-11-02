@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from .models import Post, Vote
+from .models import Post, Vote, UserProfile
 from django.contrib.auth.decorators import login_required
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, UserProfileForm
 
 # Create your views here.
 
@@ -15,18 +15,6 @@ class PostList(generic.ListView):
 
 # Detail view for a post 
 def post_detail(request, slug):
-    """
-    Display an individual :model:`blog.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-
-    **Template:**
-
-    :template:`blog/post_detail.html`
-    """
 
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -91,3 +79,22 @@ def vote(request, post_id, vote_value):
         messages.info(request, "You have already voted on this post.")
 
     return redirect('post_detail', slug=post.slug)
+
+# User profile view
+def profile_view(request, username):
+    user_profile = get_object_or_404(UserProfile, user__username=username)
+    return render(request, 'blog/profile.html', {'user_profile': user_profile})
+
+# Edit profile view
+def edit_profile(request):
+    profile = request.user.profile
+    if request.method == "POST":
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your profile was updated successfully.")
+            return redirect("profile", username=request.user.username)
+    else:
+        form = UserProfileForm(instance=profile)
+    
+    return render(request, "blog/edit_profile.html", {"form": form})
