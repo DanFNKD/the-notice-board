@@ -63,6 +63,7 @@ def create_post(request):
             post.author = request.user
             post.status = 1
             post.save()
+            form.save_m2m()
             messages.success(request, "Your post is live!")
             return redirect("post_detail", slug=post.slug)
     else:

@@ -9,4 +9,18 @@
         <button type="submit" class="btn btn-primary">Create Post</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.querySelector("input[type='file']");
+
+        if (fileInput) {
+            fileInput.addEventListener("click", function () {
+                console.log("File input clicked");
+            });
+        } else {
+            console.error("File input not found.");
+        }
+    });
+</script>
 {% endblock %}

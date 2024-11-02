@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from .validators import validate_image_size
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -34,11 +35,9 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
-    )
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     content = models.TextField()
-    image = models.ImageField(upload_to='post_images', blank=True, null=True)
+    image = models.ImageField(upload_to='post_images', blank=True, null=True, validators=[validate_image_size])
     excerpt = models.CharField(max_length=255, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

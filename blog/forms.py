@@ -4,7 +4,7 @@ from django import forms
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ["title", "content", "tags"]
+        fields = ['title', 'content', 'image', 'excerpt', 'tags']
         widgets = {
             "content": forms.Textarea(attrs={"rows": 5, "placeholder": "Write your post here..."}),
         }
