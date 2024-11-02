@@ -17,9 +17,6 @@
                                 {% if post.image %}
                                     <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid card-img-top">
                                 {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: <a href="{% url 'profile' post.author.username %}">{{ post.author }}</a></p>
-                                </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
@@ -28,6 +25,7 @@
 
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}}
+                            <p class="card-author text-muted">Posted by: <a href="{%url 'profile' post.author.username %}">{{ post.author }}</a></p>
                             </p>
                         </div>
                     </div>

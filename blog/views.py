@@ -98,8 +98,11 @@ def profile_view(request, username):
     })
 
 # Edit profile view
+@login_required
 def edit_profile(request):
-    profile = request.user.profile
+    # Get or create the user's profile
+    profile, created = UserProfile.objects.get_or_create(user=request.user)
+    
     if request.method == "POST":
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -108,5 +111,5 @@ def edit_profile(request):
             return redirect("profile", username=request.user.username)
     else:
         form = UserProfileForm(instance=profile)
-    
+
     return render(request, "blog/edit_profile.html", {"form": form})
