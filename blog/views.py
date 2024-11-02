@@ -4,14 +4,23 @@ from django.contrib import messages
 from .models import Post, Vote, UserProfile
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm, CommentForm, UserProfileForm
+from django.core.paginator import Paginator
 
 # Create your views here.
 
+def post_list(request):
+    post_list = Post.objects.filter(status=1)
+    paginator = Paginator(post_list, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
-    template_name = "blog/index.html"
-    paginate_by = 6
+    context = {
+        'post_list': page_obj,
+        'page_obj': page_obj,
+        'is_paginated': page_obj.has_other_pages(),
+    }
+
+    return render(request, "blog/index.html", context)
 
 # Detail view for a post 
 def post_detail(request, slug):
@@ -29,6 +38,7 @@ def post_detail(request, slug):
             comment.post = post
             comment.save()
             messages.success(request, 'Comment submitted and awaiting approval')
+            return redirect('post_detail', slug=post.slug)
     else:
         comment_form = CommentForm()
 
@@ -53,9 +63,6 @@ def create_post(request):
             post.author = request.user
             post.status = 1
             post.save()
-            if not post.slug:
-                post.slug = slugify(post.title)
-                post.save()
             messages.success(request, "Your post is live!")
             return redirect("post_detail", slug=post.slug)
     else:
