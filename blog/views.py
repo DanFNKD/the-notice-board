@@ -83,7 +83,11 @@ def vote(request, post_id, vote_value):
 # User profile view
 def profile_view(request, username):
     user_profile = get_object_or_404(UserProfile, user__username=username)
-    return render(request, 'blog/profile.html', {'user_profile': user_profile})
+    user_posts = Post.objects.filter(author=user_profile.user, status=1).order_by('-created_on')
+    return render(request, 'blog/profile.html', {
+        'user_profile': user_profile,
+        'user_posts': user_posts
+    })
 
 # Edit profile view
 def edit_profile(request):

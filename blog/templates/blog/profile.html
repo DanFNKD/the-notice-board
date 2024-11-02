@@ -31,5 +31,23 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h3>{{ user_profile.user.username }}'s Posts</h3>
+            {% if user_posts %}
+                <ul class="list-group mt-3">
+                    {% for post in user_posts %}
+                        <li class="list-group-item">
+                            <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                            <span class="text-muted">- {{ post.created_on }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted"><em>No posts available</em></p>
+            {% endif %}    
+        </div>
+    </div>
 </div>
 {% endblock content %}
