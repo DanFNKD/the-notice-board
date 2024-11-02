@@ -114,10 +114,19 @@ body {
     color: #002147;
 }
 
-.post-link:hover,
-.page-link {
+.card-title {
+    margin-top: 10%;
+    color: #002147;
+}
+
+.card-title:hover {
     color: #C8102E;
 }
+
+.card-text {
+    color: #002147;
+}
+
 
 /* Buttons */
 .btn-signup,
