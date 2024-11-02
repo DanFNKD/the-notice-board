@@ -18,6 +18,10 @@ body {
 }
 
 /* Navigation Links Styling */
+.navbar {
+    background-color: #F0F0F5 !important;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: #002147;
 }
@@ -27,7 +31,7 @@ body {
 }
 
 .navbar-text {
-    color: #002147;
+    color: #002147 !important;
 }
 
 /* Background Colors */
@@ -40,7 +44,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #FFFFFF;
 }
 
 /* Cards */
@@ -127,7 +131,6 @@ body {
     color: #002147;
 }
 
-
 /* Buttons */
 .btn-signup,
 .btn-edit {
@@ -160,4 +163,19 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+#commentForm {
+    width: 100%; 
+}
+
+#commentForm input[type="text"],
+#commentForm textarea {
+    width: 100%; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+#commentForm button {
+    width: 100%; 
 }
