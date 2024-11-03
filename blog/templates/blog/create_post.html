@@ -1,19 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-5"></div>
+<div class="container mt-5">
     <h2>Create a New Post</h2>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="mt-4">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Create Post</button>
+        <div class="form-group mb-3">
+            <label for="{{ form.title.id_for_label }}" class="form-label">{{ form.title.label }}</label>
+            <input type="text" name="title" id="{{ form.title.id_for_label }}" class="form-control" placeholder="Enter the post title" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="{{ form.content.id_for_label }}" class="form-label">{{ form.content.label }}</label>
+            <textarea name="content" id="{{ form.content.id_for_label }}" class="form-control" rows="5" placeholder="Write your post here..." required></textarea>
+        </div>
+        <div class="form-group mb-3">
+            <label for="{{ form.image.id_for_label }}" class="form-label">{{ form.image.label }}</label>
+            <input type="file" name="image" id="{{ form.image.id_for_label }}" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="{{ form.excerpt.id_for_label }}" class="form-label">{{ form.excerpt.label }}</label>
+            <input type="text" name="excerpt" id="{{ form.excerpt.id_for_label }}" class="form-control" placeholder="Enter a brief excerpt of the post">
+        </div>
+        <button type="submit" class="btn btn-danger mb-3">Create Post</button>
     </form>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const fileInput = document.querySelector("input[type='file']");
-
         if (fileInput) {
             fileInput.addEventListener("click", function () {
                 console.log("File input clicked");

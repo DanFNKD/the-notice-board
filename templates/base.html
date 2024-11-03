@@ -59,6 +59,10 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == profile_url %}active{% endif %}" aria-current="page" href="{{ profile_url }}">My Profile</a>
                     </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
                     <li class="nav item">
                         <span class="navbar-text ms-3">You are logged in as <strong>{{ user.username }}</strong></span>
                     </li>

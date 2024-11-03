@@ -1,9 +1,7 @@
-/* Background and Body */
 body {
     background-color: white;
 }
 
-/* Brand Logo */
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -17,9 +15,10 @@ body {
     font-style: italic;
 }
 
-/* Navigation Links Styling */
 .navbar {
     background-color: #F0F0F5 !important;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -34,7 +33,6 @@ body {
     color: #002147 !important;
 }
 
-/* Background Colors */
 .light-bg {
     background-color: #fff;
 }
@@ -47,12 +45,10 @@ body {
     background-color: #FFFFFF;
 }
 
-/* Cards */
 .card {
     border: none;
     background-color: transparent;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -63,13 +59,12 @@ body {
     flex-direction: column;
 }
 
-/* Pagination */
 .pagination {
-    margin-top: 20px; /* Adds padding between cards and pagination */
+    margin-top: 20px;
 }
 
 .pagination .page-link {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Matches card shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border: none;
     padding: 8px 12px;
     margin: 0 5px;
@@ -80,15 +75,8 @@ body {
 
 .pagination .page-link:hover {
     color: #C8102E;
-    text-decoration: none;
 }
 
-.pagination .page-link:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.15); /* Adds focus effect */
-}
-
-/* Image and Author Styling */
 .image-container {
     position: relative;
 }
@@ -98,21 +86,17 @@ body {
     height: auto;
 }
 
-/* Styling for Date */
 .card-text.h6 {
     font-size: 0.875rem;
     color: #6c757d;
     margin-bottom: 5px;
 }
 
-/* Styling for Author */
 .card-author {
     font-size: 0.875rem;
     color: #6c757d;
-    margin-top: -5px;
 }
 
-/* Post Links */
 .post-link {
     text-decoration: none;
     color: #002147;
@@ -131,21 +115,22 @@ body {
     color: #002147;
 }
 
-/* Buttons */
 .btn-signup,
 .btn-edit {
     background-color: #C8102E;
     color: #fff;
     border: none;
+    padding: 10px 20px;
 }
 
 .btn-signup:hover,
-.btn-signup:active {
+.btn-signup:active,
+.btn-edit:hover,
+.btn-edit:active {
     background-color: #002147;
     color: #fff;
 }
 
-/* Links */
 .link {
     color: #002147;
     text-decoration: none;
@@ -166,16 +151,31 @@ body {
 }
 
 #commentForm {
-    width: 100%; 
+    width: 100%;
 }
 
 #commentForm input[type="text"],
 #commentForm textarea {
-    width: 100%; 
-    padding: 10px; 
-    box-sizing: border-box; 
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #commentForm button {
-    width: 100%; 
+    width: auto;
+    margin: 0 auto;
+}
+
+.create-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-post .form-control {
+    width: 100%;
+}
+
+.profile-posts {
+    padding-bottom: 20px;
 }
