@@ -108,6 +108,7 @@ def vote(request, post_id, vote_value):
     return redirect('post_detail', slug=post.slug)
 
 # User profile view
+@login_required
 def profile_view(request, username):
     user_profile = get_object_or_404(UserProfile, user__username=username)
     user_posts = Post.objects.filter(author=user_profile.user, status=1).order_by('-created_on')
