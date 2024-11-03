@@ -9,6 +9,25 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def post_list(request):
+    query = request.GET.get('q')
+    sort = request.GET.get('sort')
+    category = request.GET.get('category')
+
+    post_list = Post.objects.filter(status=1)
+
+    if query:
+        post_list = post_list.filter(title__icontains=query)
+    
+    if category:
+        post_list = post_list.filter(category__name=category)
+    
+    if sort == 'date':
+        post_list = post_list.order_by('-created_on')
+    elif sort == 'title':
+        post_list = post_list.order_by('title')
+    elif sort == 'popularity':
+        post_list = post_list.filter(category__name=category)
+
     post_list = Post.objects.filter(status=1)
     paginator = Paginator(post_list, 6)
     page_number = request.GET.get('page')

@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     background-color: white;
 }
@@ -178,4 +179,45 @@ body {
 
 .profile-posts {
     padding-bottom: 20px;
+}
+
+/* Search, Sort, and Filter Row */
+.search-sort-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+.search-sort-filter .search-form {
+    flex: 1;
+    max-width: 35%; 
+    margin-right: 1rem;
+}
+
+.search-sort-filter .sort-filter-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.sort-filter-section label {
+    font-weight: bold;
+    color: #333;
+}
+
+.sort-filter-section select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    color: #002147;
+}
+
+.sort-filter-section select:hover,
+.sort-filter-section select:focus {
+    border-color: #C8102E;
+    outline: none;
 }
