@@ -39,6 +39,7 @@ body {
     color: #002147 !important;
 }
 
+
 /* Background Colors */
 .light-bg {
     background-color: #fff;
@@ -193,7 +194,7 @@ body {
     padding-bottom: 20px;
 }
 
-/* Search, Sort, and Filter Styling */
+/* Search, Sort, and Filter Styles */
 .search-sort-filter {
     display: flex;
     justify-content: space-between;
@@ -233,3 +234,16 @@ body {
     border-color: #C8102E;
     outline: none;
 }
+
+/* Footer Styles */
+.footer a {
+    text-decoration: none; 
+}
+
+@media (max-width: 991.98px) { 
+    #user-status {
+        display: none;
+    }
+}
+
+

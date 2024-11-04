@@ -6,11 +6,11 @@ Celebrating the best of the UK, with blog posts covering everything from Sport t
 
 Welcome to the blog App, a platform for people to come together and discuss all things UK. The App allows users to create their own profiles and interact with the community. Whether you're here to share some interesting facts or looking to learn, the App is a great way to discover things that you may not have known about...
 
-Contents
+## Contents
 
 
 
-Project Aims
+## Project Aims
 
 Provide a platform for people to post interesting content relating to the UK
 Allow users to create posts
@@ -20,7 +20,7 @@ Ensure that the App can be scaled up and handle a larger number of posts over ti
 Offer security features to protect user data
 Ensure administrators can easily moderate content and prevent misuse
 
-How to Use
+## How to Use
 
 Steps to use The Notice Board:
 
@@ -44,20 +44,43 @@ The site name is written and links to the home page. Navlinks are stored next to
 A responsive toggle button to expand/collapse the navigation links.
 Conditional links for user authentication - Create post and my profile are not visible to non-members.
 
-Profile
+![nav 1](readme-media/site_images/navbar/navbar.png)
+![nav 2](readme-media/site_images/navbar/navbar-hover.png)
+![nav 3](readme-media/site_images/navbar/navbar-collapse.png)
+
+My Profile
 
 A profile that is only accessible when the user is logged in.
 It provides an overview of the user and provides links to their posts as well as displaying the votes.
+
+![prof 1](readme-media/site_images/profile/profile.png)
+![prof 2](readme-media/site_images/profile/edit-profile.png)
 
 Footer
 
 The footer contains two paragraphs. The first displays a link to the author's GitHub and the second shows social media icons from FontAwesome.
 
+![foot 1](readme-media/site_images/footer/footer.png)
+![foot 2](readme-media/site_images/footer/footer-responsive.png)
+
 Index
 
 This page displays posts from users and is limited to 6 posts per page.
-There is pagination, allowing users to navigate between pages to view posts.
+Users can search for posts.
+Users can sort or filter posts.
 Cards display an overview of the posts, including name, excerpt and date/time/author information.
+Users can view the total page numbers at the bottom of the page.
+There is pagination, allowing users to navigate between pages to view posts.
+
+![ind 1](readme-media/site_images/index/index.png)
+
+About
+
+This page provides site users with an overview of the goals for the site.
+Users can see when the content was last updated.
+
+1[ab 1](readme-media/site_images/about/about1.png)
+1[ab 2](readme-media/site_images/about/about2.png)
 
 Future Features
 
