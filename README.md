@@ -14,6 +14,13 @@ Welcome to The Notice Board, a platform for people to come together and discuss 
     + [Epic: User Profiles & Account Management](#epic-user-profiles--account-management "Epic: User Profiles & Account Management")
     + [Epic: Post Navigation & Discovery](#epic-post-navigation--discovery "Epic: Post Navigation & Discovery")
 + [Design](#design "Design")
+    + [ERD](#erd "ERD")
+    + [Wireframes](#wireframes "Wireframes")
+        + [Index](#index-1 "Index")
+        + [About](#about-1 "About")
+        + [Create Post](#create-post-1 "Create Post")
+        + [My Profile](#my-profile-1 "My Profile")
+        + [View Post](#view-posts "View Post")
     + [Features](#features "Features")
         + [Navbar](#navbar "Navbar")
         + [My Profile](#my-profile "My Profile")
@@ -94,6 +101,80 @@ All of my user stories were entered in a GitHub project - [Link](https://github.
 
 ### ERD
 ![erd](readme-media/erd.png)
+
+### Wireframes
+
+#### Index
+
+Desktop
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-index.png" alt="Index Desktop Screen">
+</details>
+
+Mobile
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-index-mobile.png" alt="Index Mobile Screen">
+</details>
+
+#### About
+
+Desktop
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-about.png" alt="About Desktop Screen">
+</details>
+
+Mobile
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-about-mobile.png" alt="About Mobile Screen">
+</details>
+
+#### Create Post
+
+Desktop
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-create-post.png" alt="Create Post Desktop Screen">
+</details>
+
+Mobile
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-create-post-mobile.png" alt="Create Post Mobile Screen">
+</details>
+
+#### My Profile
+
+Desktop
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-my-profile.png" alt="My Profile Desktop Screen">
+</details>
+
+Mobile
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-my-profile-mobile.png" alt="My Profile Mobile Screen">
+</details>
+
+#### View Posts
+
+Desktop
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-view-post.png" alt="View Posts Desktop Screen">
+</details>
+
+Mobile
+<details>
+<summary>Click to view</summary>
+<img src="readme-media/wireframes/wireframe-view-post-mobile.png" alt="View Posts Mobile Screen">
+</details>
+
+### Fonts
 
 ### Features
 
