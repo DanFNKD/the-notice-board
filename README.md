@@ -1,10 +1,10 @@
 # The Notice Board
 
-Click this link to view the live App - [The Notice Board] (https://the-notice-board.herokuapp.com/)
+Click this link to view the live App - [The Notice Board](https://the-notice-board.herokuapp.com/)
 
 Celebrating the best of the UK, with blog posts covering everything from Sport to History, Geography to the Arts.
 
-Welcome to the blog App, a platform for people to come together and discuss all things UK. The App allows users to create their own profiles and interact with the community. Whether you're here to share some interesting facts or looking to learn, the App is a great way to discover things that you may not have known about...
+Welcome to The Notice App, a platform for people to come together and discuss all things UK. The App allows users to create their own profiles and interact with the community. Whether you're here to share some interesting facts or looking to learn, the App is a great way to discover things that you may not have known about...
 
 ## Contents
 + [Project Aims](#project-aims "Project Aims")
