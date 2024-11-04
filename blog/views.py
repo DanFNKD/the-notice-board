@@ -7,6 +7,7 @@ from .forms import PostForm, CommentForm, UserProfileForm
 from django.core.paginator import Paginator
 from django.db.models import Count
 from django.utils.text import slugify
+import time
 
 def post_list(request):
     query = request.GET.get('q')
@@ -110,7 +111,7 @@ def create_post(request):
             post.save()
             form.save_m2m() 
             
-            return redirect("post_detail", slug=post.slug)
+            return redirect("profile", username=request.user.username)
     
     else:
         form = PostForm()

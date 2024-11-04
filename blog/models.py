@@ -40,7 +40,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     content = models.TextField()
-    image = models.ImageField(upload_to='post_images', blank=True, null=True) 
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True) 
     excerpt = models.CharField(max_length=255, blank=True) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -56,7 +56,7 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        super().save(*args, **kwargs)  # Correct call to super
+        super().save(*args, **kwargs)  
 
     # Methods to calculate votes
     def total_votes(self):

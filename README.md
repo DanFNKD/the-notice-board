@@ -4,7 +4,7 @@ Click this link to view the live App - [The Notice Board](https://the-notice-boa
 
 Celebrating the best of the UK, with blog posts covering everything from Sport to History, Geography to the Arts.
 
-Welcome to The Notice App, a platform for people to come together and discuss all things UK. The App allows users to create their own profiles and interact with the community. Whether you're here to share some interesting facts or looking to learn, the App is a great way to discover things that you may not have known about...
+Welcome to The Notice Board, a platform for people to come together and discuss all things UK. The App allows users to create their own profiles and interact with the community. Whether you're here to share some interesting facts or looking to learn, the App is a great way to discover things that you may not have known about...
 
 ## Contents
 + [Project Aims](#project-aims "Project Aims")
@@ -57,6 +57,8 @@ Steps to use The Notice Board:
 5. Create posts - Contribute to the site and create posts for other users/site visitors to view an interact with.
 
 ## User Stories & Epics
+
+All of my user stories were entered in a GitHub project - [Link](https://github.com/users/DanFNKD/projects/2)
 
 ## Design
 
