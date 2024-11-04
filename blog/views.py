@@ -162,3 +162,12 @@ def edit_profile(request):
         form = UserProfileForm(instance=profile)
 
     return render(request, "blog/edit_profile.html", {"form": form})
+
+# Post deletion view
+@login_required
+def delete_post(request, post_id):
+    if request.user.is_staff:
+        post = get_object_or_404(Post, id=post_id)
+        post.delete()
+        messages.success(request, "Post deleted successfully.")
+        return redirect('home')
