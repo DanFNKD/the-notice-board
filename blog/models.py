@@ -5,9 +5,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .validators import validate_image_size
 
+# Choices for post status
 STATUS = ((0, "Draft"), (1, "Published"))
-
-# Create your models here.
 
 # User Profile model
 class UserProfile(models.Model):
@@ -18,6 +17,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return f"{self.user.username}'s Profile"
 
+# Signal to automatically create or save user profile
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -53,6 +53,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    # Methods to calculate votes
     def total_votes(self):
         return sum(vote.value for vote in self.votes.all())
 
@@ -62,6 +63,7 @@ class Post(models.Model):
     def downvote_count(self):
         return self.votes.filter(value=-1).count()
 
+    # Automatically set slug based on title
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
