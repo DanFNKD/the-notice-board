@@ -9,7 +9,27 @@ Welcome to the blog App, a platform for people to come together and discuss all 
 ## Contents
 + [Project Aims](#project-aims "Project Aims")
 + [How to Use](#how-to-use "How to Use")
-
++ [User Stories & Epics](#user-stories--epics "User Stories & Epics")
++ [Design](#design "Design")
+    + [Features](#features "Features")
+        + [Navbar](#navbar "Navbar")
+        + [My Profile](#my-profile "My Profile")
+        + [Footer](#footer "Footer")
+        + [Index](#index "Index")
+        + [Posts](#posts "Posts")
+            + [Post Messages](#post-messages "Post Messages")
+        + [About](#about "About")
+        + [Create Post](#create-post "Create Post")
+            + [Create Post Messages](#create-post-messages "Create Post Messages")
+        + [Sign Up, Login & Sign Out](#sign-up-login-and-sign-out "Sign Up, Login & Sign Out")
+    + [Future Features](#future-features "Future Features")
++ [Technologies Used](#technologies-used "Technologies User")
++ [Testing](#testing "Testing")
++ [Deployment](#deployment "Deployment")
+    + [Local Deployment](#local-deployment "Local Deployment")
+    + [Remote Deployment](#remote-deployment "Remote Deployment")
++ [Credits](#credits "Credits")
++ [Acknowledgments](#acknowledgments "Acknowledgments")
 
 ## Project Aims
 
@@ -31,15 +51,15 @@ Steps to use The Notice Board:
 4. Comment/vote on posts - Let other users know what you think of their content and vote to inform potential readers.
 5. Create posts - Contribute to the site and create posts for other users/site visitors to view an interact with.
 
-User Stories & Epics
+## User Stories & Epics
 
-Design
+## Design
 
-Features
+### Features
 
 Below are the core features of The Notice Board. 
 
-Navbar
+#### Navbar
 
 The site name is written and links to the home page. Navlinks are stored next to the logo and login/logout functionality sits to the right to separate the features.
 A responsive toggle button to expand/collapse the navigation links.
@@ -49,7 +69,7 @@ Conditional links for user authentication - Create post and my profile are not v
 ![nav 2](readme-media/site_images/navbar/navbar-hover.png)
 ![nav 3](readme-media/site_images/navbar/navbar-collapse.png)
 
-My Profile
+#### My Profile
 
 A profile that is only accessible when the user is logged in.
 It provides an overview of the user and provides links to their posts as well as displaying the votes.
@@ -57,14 +77,14 @@ It provides an overview of the user and provides links to their posts as well as
 ![prof 1](readme-media/site_images/profile/profile.png)
 ![prof 2](readme-media/site_images/profile/edit-profile.png)
 
-Footer
+#### Footer
 
 The footer contains two paragraphs. The first displays a link to the author's GitHub and the second shows social media icons from FontAwesome.
 
 ![foot 1](readme-media/site_images/footer/footer.png)
 ![foot 2](readme-media/site_images/footer/footer-responsive.png)
 
-Index
+#### Index
 
 This page displays posts from users and is limited to 6 posts per page.
 Users can search for posts.
@@ -75,7 +95,7 @@ There is pagination, allowing users to navigate between pages to view posts.
 
 ![ind 1](readme-media/site_images/index/index.png)
 
-Posts
+#### Posts
 
 This page displays the selected post.
 It has a title, confirms the author and when it was created.
@@ -85,7 +105,7 @@ Users can leave a comment.
 ![post 1](readme-media/site_images/post/post1.png)
 ![post 2](readme-media/site_images/post/post2.png)
 
-Messages
+##### Post Messages
 
 Messages are displayed when a user votes on a post.
 Messages are displayed when a user submits a comment, confirming that it has been sent for approval.
@@ -93,7 +113,7 @@ Messages are displayed when a user submits a comment, confirming that it has bee
 ![post 3](readme-media/site_images/post/vote-feedback-message.png)
 ![post 4](readme-media/site_images/post/comment-feedback-message.png)
 
-About
+#### About
 
 This page provides site users with an overview of the goals for the site.
 Users can see when the content was last updated.
@@ -101,7 +121,7 @@ Users can see when the content was last updated.
 ![ab 1](readme-media/site_images/about/about1.png)
 ![ab 2](readme-media/site_images/about/about2.png)
 
-Create Post
+#### Create Post
 
 This page allows an admin or user to create a post.
 
@@ -109,13 +129,13 @@ This page allows an admin or user to create a post.
 ![cp 2](readme-media/site_images/create-post/create-post-verification1.png)
 ![cp 3](readme-media/site_images/create-post/create-post-verification2.png)
 
-Messages
+##### Create Post Messages
 
 The admin and user will see a message when the post has been created/sent for approval.
 
 ![cp 4](readme-media/site_images/create-post/create-post-acceptance.png)
 
-Sign Up, Login and Sign Out
+#### Sign Up, Login and Sign Out
 
 Users can sign up and create a new account.
 When creating a new account, they can see the criteria for passwords.
@@ -130,7 +150,7 @@ Allauth was implemented to handle account creation and verification.
 ![acc 6](readme-media/site_images/sign-in/sign-in-verification.png)
 ![acc 7](readme-media/site_images/sign-out/sign-out.png)
 
-Future Features
+### Future Features
 
 Profile Images:
 
@@ -140,7 +160,7 @@ Notifications:
 
 Provide registered users with notifications when someone either votes or comments on a post of theirs.
 
-Technologies Used
+## Technologies Used
 
 HTML
 CSS
@@ -153,7 +173,7 @@ Google Fonts
 Bootstrap
 Postgres
 
-Testing
+## Testing
 
 Fixed Bugs
 
@@ -165,9 +185,9 @@ When initially testing my vote counter, I noticed that a downvote would reduce t
 
 For the project, I ensured that non registered users could not view certain pages. They could however click the hyperlink on the post card and be directed to the user's profile. I implemented the following code to prevent this behaviour.
 
-Deployment
+## Deployment
 
-Local Deployment
+### Local Deployment
 
 1. Sign up to code-institute-ide.net.
 2. On Github.com, navigate to the DanFNKD/the-notice-board repository
@@ -177,7 +197,7 @@ Local Deployment
 6. Paste the https link.
 7. Click Continue.
 
-Remote Deployment
+### Remote Deployment
 
 1. Log in to Heroku.
 2. Click 'Create new app'.
@@ -195,7 +215,7 @@ Remote Deployment
 14. Click 'Deploy'.
 15. Click the 'View' button once the project is built to load the URL.
 
-Credits
+## Credits
 
 Django Documentation - Django
 Bootstrap Documentation - Bootstrap
@@ -203,7 +223,7 @@ Lucid Chart - Used to design the Entity Relationship Diagram - Lucid Chart
 Icons - Font Awesome
 Google Fonts
 
-Acknowledgments
+## Acknowledgments
 
 I'd like to thank my tutor Daniel Hamilton. He taught me many new things that were included in the project and helped throughout.
 
