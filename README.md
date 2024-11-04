@@ -79,8 +79,23 @@ About
 This page provides site users with an overview of the goals for the site.
 Users can see when the content was last updated.
 
-1[ab 1](readme-media/site_images/about/about1.png)
-1[ab 2](readme-media/site_images/about/about2.png)
+![ab 1](readme-media/site_images/about/about1.png)
+![ab 2](readme-media/site_images/about/about2.png)
+
+Sign Up, Login and Sign Out
+
+Users can sign up and create a new account.
+When creating a new account, they can see the criteria for passwords.
+Users can log in to their account.
+Allauth was implemented to handle account creation and verification.
+
+![acc 1](readme-media/site_images/sign-up/sign-up.png)
+![acc 2](readme-media/site_images/sign-up/sign-up-verification1.png)
+![acc 3](readme-media/site_images/sign-up/sign-up-verification2.png)
+![acc 4](readme-media/site_images/sign-up/sign-up-verification3.png)
+![acc 5](readme-media/site_images/sign-in/sign-in.png)
+![acc 6](readme-media/site_images/sign-in/sign-in-verification.png)
+![acc 7](readme-media/site_images/sign-out/sign-out.png)
 
 Future Features
 
