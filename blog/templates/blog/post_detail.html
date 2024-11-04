@@ -25,7 +25,7 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col mb-4  mt-3">
             <div class="card-body">
                 <!-- Display post content with the safe filter -->
                 <p class="card-text">
@@ -59,32 +59,27 @@
     </div>
     <!-- Displaying comments -->
      <div class="row">
-        <div class="col-md-12 card mb-4 mt-3">
-            <h3 class="card-title">Comments</h3>
-            <div class="card-body">
-                {% for comment in comments %}
-                    <article class="mb-3
-                        {% if not comment.approved %}
-                            {% if comment.author == user %} text-muted{% else %} d-none{% endif %}
-                        {% endif %}
-                    ">
-                        <p class="font-weight-bold">
-                            <a href="{% url 'profile' comment.author.username %}">{{ comment.author }}</a>
-                            <span class="font-weight-normal">
-                                {{ comment.created_on }}
-                            </span> wrote: 
-                        </p>
-                        <div id="comment{{ comment.id }}">
-                            {{ comment.body | linebreaks }}
-                        </div>
+        <div class="col-12">
+            <h3>Comments</h3>
+            {% for comment in comments %}
+                <article class="mb-3 {% if not comment.approved and comment.author != user %} d-none {% endif %}">
+                    <p class="font-weight-bold">
+                        <a href="{% url 'profile' comment.author.username %}">{{ comment.author }}</a>
+                        <span class="font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote: 
+                    </p>
+                    <div id="comment{{ comment.id }}">
+                        {{ comment.body | linebreaks }}
+                    </div>
 
                     {% if not comment.approved and comment.author == user %}
                         <p class="approval text-warning">
                             This comment is awaiting approval.
                         </p>
                     {% endif %}
-                    </article>
-                {% endfor %}
+                </article>
+            {% endfor %}
             </div>
             <div class="col-md-4 card mb-4 mt-3">
                 <div class="card-body">

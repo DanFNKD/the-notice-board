@@ -16,6 +16,10 @@ body {
     font-style: italic;
 }
 
+.post-title {
+    padding-top: 2rem;
+}
+
 /* Navbar Styles */
 .navbar {
     background-color: #F0F0F5 !important;

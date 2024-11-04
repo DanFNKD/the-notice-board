@@ -1,4 +1,6 @@
-Click this link to view the live App - The Notice Board
+# The Notice Board
+
+Click this link to view the live App - [The Notice Board] (https://the-notice-board.herokuapp.com/)
 
 Celebrating the best of the UK, with blog posts covering everything from Sport to History, Geography to the Arts.
 
