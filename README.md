@@ -176,6 +176,11 @@ Mobile
 
 ### Fonts
 
+Google Fonts were used in the project. Simplistic fonts were selected to improve readability.
+
+- Roboto
+- Lato
+
 ### Features
 
 Below are the core features of The Notice Board. 
