@@ -7,7 +7,8 @@ Celebrating the best of the UK, with blog posts covering everything from Sport t
 Welcome to the blog App, a platform for people to come together and discuss all things UK. The App allows users to create their own profiles and interact with the community. Whether you're here to share some interesting facts or looking to learn, the App is a great way to discover things that you may not have known about...
 
 ## Contents
-
++ [Project Aims](#project-aims "Project Aims")
++ [How to Use](#how-to-use "How to Use")
 
 
 ## Project Aims
@@ -74,6 +75,24 @@ There is pagination, allowing users to navigate between pages to view posts.
 
 ![ind 1](readme-media/site_images/index/index.png)
 
+Posts
+
+This page displays the selected post.
+It has a title, confirms the author and when it was created.
+There posts upvotes/downvotes are displayed with FontAwesome Icons.
+Users can leave a comment.
+
+![post 1](readme-media/site_images/post/post1.png)
+![post 2](readme-media/site_images/post/post2.png)
+
+Messages
+
+Messages are displayed when a user votes on a post.
+Messages are displayed when a user submits a comment, confirming that it has been sent for approval.
+
+![post 3](readme-media/site_images/post/vote-feedback-message.png)
+![post 4](readme-media/site_images/post/comment-feedback-message.png)
+
 About
 
 This page provides site users with an overview of the goals for the site.
@@ -81,6 +100,20 @@ Users can see when the content was last updated.
 
 ![ab 1](readme-media/site_images/about/about1.png)
 ![ab 2](readme-media/site_images/about/about2.png)
+
+Create Post
+
+This page allows an admin or user to create a post.
+
+![cp 1](readme-media/site_images/create-post/create-post.png)
+![cp 2](readme-media/site_images/create-post/create-post-verification1.png)
+![cp 3](readme-media/site_images/create-post/create-post-verification2.png)
+
+Messages
+
+The admin and user will see a message when the post has been created/sent for approval.
+
+![cp 4](readme-media/site_images/create-post/create-post-acceptance.png)
 
 Sign Up, Login and Sign Out
 

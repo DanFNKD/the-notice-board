@@ -6,8 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import PostForm, CommentForm, UserProfileForm
 from django.core.paginator import Paginator
 from django.db.models import Count
-
-# Create your views here.
+from django.utils.text import slugify
 
 def post_list(request):
     query = request.GET.get('q')
@@ -96,14 +95,27 @@ def create_post(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.status = 1
+
+            post.slug = slugify(post.title) if post.title else 'default-slug'
+            
+            # Determine post status based on user role
+            if request.user.is_staff:
+                post.status = 1  # Published status
+                messages.success(request, "Your post has been published successfully!")
+            else:
+                post.status = 0  # Draft status (for pending approval)
+                messages.success(request, "Your post has been submitted for approval and will be live once approved!")
+            
+            # Save the post
             post.save()
-            form.save_m2m()
-            messages.success(request, "Your post is live!")
+            form.save_m2m() 
+            
             return redirect("post_detail", slug=post.slug)
+    
     else:
         form = PostForm()
     return render(request, "blog/create_post.html", {"form": form})
+
 
 # voting for upvoting and downvoting
 @login_required

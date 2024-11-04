@@ -36,22 +36,27 @@ class Tag(models.Model):
 
 # Post model
 class Post(models.Model):
-    title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=100, unique=True, blank=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     content = models.TextField()
-    image = models.ImageField(upload_to='post_images', blank=True, null=True)
-    excerpt = models.CharField(max_length=255, blank=True)
+    image = models.ImageField(upload_to='post_images', blank=True, null=True) 
+    excerpt = models.CharField(max_length=255, blank=True) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     tags = models.ManyToManyField(Tag, related_name="posts", blank=True)
-
+    
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)  # Correct call to super
 
     # Methods to calculate votes
     def total_votes(self):
@@ -62,12 +67,6 @@ class Post(models.Model):
 
     def downvote_count(self):
         return self.votes.filter(value=-1).count()
-
-    # Automatically set slug based on title
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        models.Model.save(self, *args, **kwargs)
 
 # Comment model
 class Comment(models.Model):
