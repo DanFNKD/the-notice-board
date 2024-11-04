@@ -21,6 +21,11 @@
             <label for="{{ form.excerpt.id_for_label }}" class="form-label">{{ form.excerpt.label }}</label>
             <input type="text" name="excerpt" id="{{ form.excerpt.id_for_label }}" class="form-control" placeholder="Enter a brief excerpt of the post">
         </div>
+        <div class="form-group mb-3">
+            <label for="{{ form.tags.id_for_label }}" class="form-label">{{ form.tags.label }}</label>
+            {{ form.tags }}
+            <small class="form-text text-muted">Select at least one tag for your post</small>
+        </div>
         <button type="submit" class="btn btn-danger mb-3">Create Post</button>
     </form>
 </div>

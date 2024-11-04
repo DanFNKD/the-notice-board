@@ -4,47 +4,55 @@
 
 <div class="container-fluid">
 
-    <!-- Search, Sort, and Filter Section -->
-    <div class="search-sort-filter">
-        <!-- Search Form -->
-        <form method="get" action="{% url 'home' %}" class="search-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search posts..." value="{{ query|default:'' }}">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </div>
-        </form>
+   <!-- Search, Sort, and Filter Section -->
+    <form method="get" action="{% url 'home' %}" class="search-sort-filter mt-4">
+        <div class="row align-items-center gx-2">
 
-        <!-- Sort and Filter Section -->
-        <div class="sort-filter-section">
-            <!-- Sorting -->
-            <div>
-                <label for="sort">Sort by:</label>
-                <select id="sort" name="sort" onchange="this.form.submit()" form="sortForm">
-                    <option value="">Select</option>
-                    <option value="date" {% if sort == 'date' %}selected{% endif %}>Date</option>
-                    <option value="title" {% if sort == 'title' %}selected{% endif %}>Title</option>
-                    <option value="popularity" {% if sort == 'popularity' %}selected{% endif %}>Popularity</option>
-                </select>
+            <!-- Search Input -->
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search posts..." value="{{ query|default:'' }}">
+                </div>
             </div>
 
-            <!-- Category Filter -->
-            <div>
-                <label for="category">Filter by category:</label>
-                <select id="category" name="category" onchange="this.form.submit()" form="sortForm">
-                    <option value="">All Categories</option>
-                    <option value="tech" {% if category == 'tech' %}selected{% endif %}>Tech</option>
-                    <option value="lifestyle" {% if category == 'lifestyle' %}selected{% endif %}>Lifestyle</option>
-                    <option value="sports" {% if category == 'sports' %}selected{% endif %}>Sports</option>
-                </select>
+            <!-- Sort By Dropdown -->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select id="sort" name="sort" class="form-select">
+                        <option value="" disabled selected>Sort:</option>
+                        <option value="date" {% if sort == 'date' %}selected{% endif %}>Date</option>
+                        <option value="title" {% if sort == 'title' %}selected{% endif %}>Title</option>
+                        <option value="popularity" {% if sort == 'popularity' %}selected{% endif %}>Popularity</option>
+                    </select>
+                </div>
             </div>
+
+            <!-- Tag Filter Dropdown -->
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select id="tag" name="tag" class="form-select">
+                        <option value="" disabled selected>Filter:</option>
+                        {% for tag in tags %}
+                            <option value="{{ tag.name }}" {% if tag.name == selected_tag %}selected{% endif %}>{{ tag.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <!-- Search and Reset Buttons -->
+            <div class="col-md-2 d-flex justify-content-start gap-2">
+                <button type="submit" class="btn btn-primary">Search</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Reset</a>
+            </div>
+
         </div>
-    </div>
+    </form>
 
     <!-- Blog Entries Column -->
     <div class="row">
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                {% for post in page_obj %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -78,18 +86,24 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li>
-                <a href="?q={{ query }}&sort={{ sort }}&category={{ category }}&page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous"> &laquo; PREV</a>
+            <li class="page-item">
+                <a href="?{% if query %}q={{ query }}&{% endif %}{% if sort %}sort={{ sort }}&{% endif %}{% if selected_tag %}tag={{ selected_tag }}&{% endif %}page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous"> &laquo; PREV</a>
             </li>
             {% endif %}
+
+            <!-- Display current page and total pages -->
+            <li class="page-item disabled">
+                <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+            </li>
+
             {% if page_obj.has_next %}
-            <li>
-                <a href="?q={{ query }}&sort={{ sort }}&category={{ category }}&page={{ page_obj.next_page_number }}" class="page-link" aria-label="Next"> NEXT &raquo;</a>
+            <li class="page-item">
+                <a href="?{% if query %}q={{ query }}&{% endif %}{% if sort %}sort={{ sort }}&{% endif %}{% if selected_tag %}tag={{ selected_tag }}&{% endif %}page={{ page_obj.next_page_number }}" class="page-link" aria-label="Next"> NEXT &raquo;</a>
             </li>
             {% endif %}
         </ul>
     </nav>
-    {% endif %}
+{% endif %}
 </div>
 
 {% endblock %}

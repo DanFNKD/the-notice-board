@@ -1,42 +1,58 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
-from .models import Post, Vote, UserProfile
+from .models import Post, Vote, UserProfile, Tag
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm, CommentForm, UserProfileForm
 from django.core.paginator import Paginator
+from django.db.models import Count
 
 # Create your views here.
 
 def post_list(request):
     query = request.GET.get('q')
     sort = request.GET.get('sort')
-    category = request.GET.get('category')
+    selected_tag = request.GET.get('tag')
 
+    # Initial post query for published posts
     post_list = Post.objects.filter(status=1)
 
+    # Apply search filtering
     if query:
         post_list = post_list.filter(title__icontains=query)
     
-    if category:
-        post_list = post_list.filter(category__name=category)
-    
+    # Apply tag filtering if selected
+    if selected_tag:
+        post_list = post_list.filter(tags__name=selected_tag)
+
+    # Annotate with vote count for sorting by popularity
+    post_list = post_list.annotate(vote_count=Count('votes'))
+
+    # Apply sorting based on query
     if sort == 'date':
         post_list = post_list.order_by('-created_on')
     elif sort == 'title':
         post_list = post_list.order_by('title')
     elif sort == 'popularity':
-        post_list = post_list.filter(category__name=category)
+        post_list = post_list.order_by('-vote_count')
 
-    post_list = Post.objects.filter(status=1)
+    # Pagination: Show 6 posts per page
     paginator = Paginator(post_list, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+    # Fetch all tags for filtering dropdown
+    tags = Tag.objects.all()
+
+    # Context with page_obj as post_list
     context = {
-        'post_list': page_obj,
+        'post_list': page_obj,  # paginated posts
         'page_obj': page_obj,
         'is_paginated': page_obj.has_other_pages(),
+        'query': query,
+        'sort': sort,
+        'selected_tag': selected_tag,
+        'tags': tags,
     }
 
     return render(request, "blog/index.html", context)

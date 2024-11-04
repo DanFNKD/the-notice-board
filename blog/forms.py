@@ -1,7 +1,13 @@
-from .models import Post, Comment, UserProfile
+from .models import Post, Comment, UserProfile, Tag
 from django import forms
 
 class PostForm(forms.ModelForm):
+    tags = forms.ModelMultipleChoiceField(
+        queryset=Tag.objects.all(),
+        widget=forms.SelectMultiple,
+        required=True
+    )
+
     class Meta:
         model = Post
         fields = ['title', 'content', 'image', 'excerpt', 'tags']

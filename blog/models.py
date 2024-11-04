@@ -9,6 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 
+# User Profile model
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     bio = models.TextField(blank=True, null=True)
@@ -26,12 +27,14 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
+# Tag model
 class Tag(models.Model):
     name = models.CharField(max_length=40, unique=True)
 
     def __str__(self):
         return self.name
 
+# Post model
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -42,7 +45,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    tags = models.ManyToManyField(Tag, related_name="posts")
+    tags = models.ManyToManyField(Tag, related_name="posts", blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -64,6 +67,7 @@ class Post(models.Model):
             self.slug = slugify(self.title)
         models.Model.save(self, *args, **kwargs)
 
+# Comment model
 class Comment(models.Model):
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments")
@@ -79,6 +83,7 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment by {self.author} on {self.post.title}"
 
+# Vote model
 class Vote(models.Model):
     UPVOTE = 1
     DOWNVOTE = -1

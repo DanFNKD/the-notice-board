@@ -10,19 +10,15 @@
                 <!-- Post title -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post metadata (author and date) -->
-                 <div class="post-meta">
+                <div class="post-meta">
                     <p class="post-subtitle">
-                        <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a> | {{ post.created_on }}</p>
-                 </div>
-
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <img src="{% static 'images/unionjack.jpg' %}" class="scale" alt="Union Jack flag">
+                        <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a> | {{ post.created_on }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
