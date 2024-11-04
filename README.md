@@ -23,8 +23,13 @@ Welcome to the blog App, a platform for people to come together and discuss all 
             + [Create Post Messages](#create-post-messages "Create Post Messages")
         + [Sign Up, Login & Sign Out](#sign-up-login-and-sign-out "Sign Up, Login & Sign Out")
     + [Future Features](#future-features "Future Features")
+        + [Profile Images](#profile-images "Profile Images")
+        + [Notifications](#notifications "Notifications")
 + [Technologies Used](#technologies-used "Technologies User")
 + [Testing](#testing "Testing")
+    + [Fixed Bugs](#fixed-bugs "Fixed Bugs")
+        + [Downvote counter](#1-downvote-counter "Downvote counter")
+        + [Non registered users accessing profiles](#2-non-registered-users-accessing-profiles "Non registered users accessing profiles")
 + [Deployment](#deployment "Deployment")
     + [Local Deployment](#local-deployment "Local Deployment")
     + [Remote Deployment](#remote-deployment "Remote Deployment")
@@ -152,36 +157,36 @@ Allauth was implemented to handle account creation and verification.
 
 ### Future Features
 
-Profile Images:
+#### Profile Images:
 
 Allow registered users to upload images to their profiles.
 
-Notifications:
+#### Notifications:
 
 Provide registered users with notifications when someone either votes or comments on a post of theirs.
 
 ## Technologies Used
 
-HTML
-CSS
-Python
-Javascript
-django-allauth
-django-crispy-forms
-django-summernote
-Google Fonts
-Bootstrap
-Postgres
+- HTML
+- CSS
+- Python
+- Javascript
+- django-allauth
+- django-crispy-forms
+- django-summernote
+- Google Fonts
+- Bootstrap
+- Postgres
 
 ## Testing
 
-Fixed Bugs
+### Fixed Bugs
 
-1. Downvote counter
+#### 1. Downvote counter
 
 When initially testing my vote counter, I noticed that a downvote would reduce the total counter by -1. To combat this, I removed the total vount counter as it was not necessary to be displayed to the user.
 
-2. Non registered users accessing profiles
+#### 2. Non registered users accessing profiles
 
 For the project, I ensured that non registered users could not view certain pages. They could however click the hyperlink on the post card and be directed to the user's profile. I implemented the following code to prevent this behaviour.
 
@@ -217,11 +222,12 @@ For the project, I ensured that non registered users could not view certain page
 
 ## Credits
 
-Django Documentation - Django
-Bootstrap Documentation - Bootstrap
-Lucid Chart - Used to design the Entity Relationship Diagram - Lucid Chart
-Icons - Font Awesome
-Google Fonts
+Django Documentation - Django - [Django](https://docs.djangoproject.com/en/5.1/)
+Bootstrap Documentation - Bootstrap - [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+Stack Overflow - [Stack Overflow](https://stackoverflow.com/)
+Lucid Chart - Used to design the Entity Relationship Diagram - [Lucid Chart](https://lucid.app/)
+Icons - Font Awesome - [Font Awesome](https://fontawesome.com/)
+Google Fonts - [Google Fonts](https://fonts.google.com/)
 
 ## Acknowledgments
 
