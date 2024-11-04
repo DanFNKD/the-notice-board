@@ -61,5 +61,79 @@ Cards display an overview of the posts, including name, excerpt and date/time/au
 
 Future Features
 
+Profile Images:
+
+Allow registered users to upload images to their profiles.
+
+Notifications:
+
+Provide registered users with notifications when someone either votes or comments on a post of theirs.
+
+Technologies Used
+
+HTML
+CSS
+Python
+Javascript
+django-allauth
+django-crispy-forms
+django-summernote
+Google Fonts
+Bootstrap
+Postgres
+
+Testing
+
+Fixed Bugs
+
+1. Downvote counter
+
+When initially testing my vote counter, I noticed that a downvote would reduce the total counter by -1. To combat this, I removed the total vount counter as it was not necessary to be displayed to the user.
+
+2. Non registered users accessing profiles
+
+For the project, I ensured that non registered users could not view certain pages. They could however click the hyperlink on the post card and be directed to the user's profile. I implemented the following code to prevent this behaviour.
+
+Deployment
+
+Local Deployment
+
+1. Sign up to code-institute-ide.net.
+2. On Github.com, navigate to the DanFNKD/the-notice-board repository
+3. Click the code button.
+4. Copy the https link.
+5. Navigate to code-institute-ide.net and select new workspace.
+6. Paste the https link.
+7. Click Continue.
+
+Remote Deployment
+
+1. Log in to Heroku.
+2. Click 'Create new app'.
+3. Give the application a unique name, select the correct region and click the 'Create App' button.
+4. Configure the external Postgres database.
+5. Go to settings are click 'Reveal Config Vars' in the Config Vars section.
+6. Add ALLOWED_HOSTS and the value as the project name with '.herokuapp.com' appended at the end.
+7. Add SECRET_KEY and the value of the complex string.
+8. Add DATABASE_URL as I am using a different database for the project.
+9. Navigate to the 'Deploy' page.
+10. Select 'GitHub' from the 'Deployment method' section.
+11. Enter the GitHub account details and the correct repository.
+12. Select 'Manual Deploy'.
+13. Select the 'main branch'.
+14. Click 'Deploy'.
+15. Click the 'View' button once the project is built to load the URL.
+
+Credits
+
+Django Documentation - Django
+Bootstrap Documentation - Bootstrap
+Lucid Chart - Used to design the Entity Relationship Diagram - Lucid Chart
+Icons - Font Awesome
+Google Fonts
+
+Acknowledgments
+
+I'd like to thank my tutor Daniel Hamilton. He taught me many new things that were included in the project and helped throughout.
 
 
