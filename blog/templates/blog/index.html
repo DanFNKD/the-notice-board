@@ -18,7 +18,7 @@
             <!-- Sort By Dropdown -->
             <div class="col-md-2">
                 <div class="form-group">
-                    <select id="sort" name="sort" class="form-select">
+                    <select id="sort" name="sort" class="form-select sort-dropdown">
                         <option value="" disabled selected>Sort:</option>
                         <option value="date" {% if sort == 'date' %}selected{% endif %}>Date</option>
                         <option value="title" {% if sort == 'title' %}selected{% endif %}>Title</option>
@@ -30,7 +30,7 @@
             <!-- Tag Filter Dropdown -->
             <div class="col-md-2">
                 <div class="form-group">
-                    <select id="tag" name="tag" class="form-select">
+                    <select id="tag" name="tag" class="form-select filter-dropdown">
                         <option value="" disabled selected>Filter:</option>
                         {% for tag in tags %}
                             <option value="{{ tag.name }}" {% if tag.name == selected_tag %}selected{% endif %}>{{ tag.name }}</option>
@@ -41,7 +41,7 @@
 
             <!-- Search and Reset Buttons -->
             <div class="col-md-2 d-flex justify-content-start gap-2">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-danger">Search</button>
                 <a href="{% url 'home' %}" class="btn btn-secondary">Reset</a>
             </div>
 
