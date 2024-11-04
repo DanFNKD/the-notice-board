@@ -21,6 +21,7 @@ Welcome to The Notice Board, a platform for people to come together and discuss 
         + [Create Post](#create-post-1 "Create Post")
         + [My Profile](#my-profile-1 "My Profile")
         + [View Post](#view-posts "View Post")
+    + [Fonts](#fonts "Fonts")
     + [Features](#features "Features")
         + [Navbar](#navbar "Navbar")
         + [My Profile](#my-profile "My Profile")
