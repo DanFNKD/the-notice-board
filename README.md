@@ -222,12 +222,12 @@ For the project, I ensured that non registered users could not view certain page
 
 ## Credits
 
-Django Documentation - Django - [Django](https://docs.djangoproject.com/en/5.1/)
-Bootstrap Documentation - Bootstrap - [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-Stack Overflow - [Stack Overflow](https://stackoverflow.com/)
-Lucid Chart - Used to design the Entity Relationship Diagram - [Lucid Chart](https://lucid.app/)
-Icons - Font Awesome - [Font Awesome](https://fontawesome.com/)
-Google Fonts - [Google Fonts](https://fonts.google.com/)
+- Django Documentation - Django - [Django](https://docs.djangoproject.com/en/5.1/)
+- Bootstrap Documentation - Bootstrap - [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- Stack Overflow - [Stack Overflow](https://stackoverflow.com/)
+- Lucid Chart - Used to design the Entity Relationship Diagram - [Lucid Chart](https://lucid.app/)
+- Icons - Font Awesome - [Font Awesome](https://fontawesome.com/)
+- Google Fonts - [Google Fonts](https://fonts.google.com/)
 
 ## Acknowledgments
 
