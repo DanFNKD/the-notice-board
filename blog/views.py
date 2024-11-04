@@ -15,7 +15,7 @@ def post_list(request):
     selected_tag = request.GET.get('tag')
 
     # Initial post query for published posts
-    post_list = Post.objects.filter(status=1)
+    post_list = Post.objects.filter(status=1).order_by('-created_on')
 
     # Apply search filtering
     if query:
