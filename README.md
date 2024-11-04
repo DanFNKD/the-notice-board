@@ -60,6 +60,9 @@ Steps to use The Notice Board:
 
 ## Design
 
+### ERD
+![erd](readme-media/erd.png)
+
 ### Features
 
 Below are the core features of The Notice Board. 
