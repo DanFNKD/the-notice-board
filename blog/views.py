@@ -9,6 +9,7 @@ from django.db.models import Count
 from django.utils.text import slugify
 import time
 
+
 def post_list(request):
     query = request.GET.get('q')
     sort = request.GET.get('sort')
@@ -20,7 +21,7 @@ def post_list(request):
     # Apply search filtering
     if query:
         post_list = post_list.filter(title__icontains=query)
-    
+
     # Apply tag filtering if selected
     if selected_tag:
         post_list = post_list.filter(tags__name=selected_tag)
@@ -57,14 +58,15 @@ def post_list(request):
 
     return render(request, "blog/index.html", context)
 
-# Detail view for a post 
+
+# Detail view for a post
 def post_detail(request, slug):
 
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.filter(approved=True).order_by("-created_on")
     comment_count = comments.count()
-    
+
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -72,7 +74,8 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
-            messages.success(request, 'Comment submitted and awaiting approval')
+            messages.success(request,
+                             'Comment submitted and awaiting approval')
             return redirect('post_detail', slug=post.slug)
     else:
         comment_form = CommentForm()
@@ -88,6 +91,7 @@ def post_detail(request, slug):
         },
     )
 
+
 # creating a post
 @login_required
 def create_post(request):
@@ -98,21 +102,22 @@ def create_post(request):
             post.author = request.user
 
             post.slug = slugify(post.title) if post.title else 'default-slug'
-            
+
             # Determine post status based on user role
             if request.user.is_staff:
                 post.status = 1  # Published status
-                messages.success(request, "Your post has been published successfully!")
+                messages.success(request,
+                                 "Your post has been published successfully!")
             else:
                 post.status = 0  # Draft status (for pending approval)
                 messages.success(request, "Your post has been submitted for approval and will be live once approved!")
-            
+
             # Save the post
             post.save()
-            form.save_m2m() 
-            
+            form.save_m2m()
+
             return redirect("profile", username=request.user.username)
-    
+
     else:
         form = PostForm()
     return render(request, "blog/create_post.html", {"form": form})
@@ -136,6 +141,7 @@ def vote(request, post_id, vote_value):
 
     return redirect('post_detail', slug=post.slug)
 
+
 # User profile view
 @login_required
 def profile_view(request, username):
@@ -146,12 +152,13 @@ def profile_view(request, username):
         'user_posts': user_posts
     })
 
+
 # Edit profile view
 @login_required
 def edit_profile(request):
     # Get or create the user's profile
     profile, created = UserProfile.objects.get_or_create(user=request.user)
-    
+
     if request.method == "POST":
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -162,6 +169,7 @@ def edit_profile(request):
         form = UserProfileForm(instance=profile)
 
     return render(request, "blog/edit_profile.html", {"form": form})
+
 
 # Post deletion view
 @login_required

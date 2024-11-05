@@ -8,14 +8,17 @@ from .validators import validate_image_size
 # Choices for post status
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 # User Profile model
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    user = models.OneToOneField(User, on_delete=models.CASCADE,
+                                related_name="profile")
     bio = models.TextField(blank=True, null=True)
     location = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return f"{self.user.username}'s Profile"
+
 
 # Signal to automatically create or save user profile
 @receiver(post_save, sender=User)
@@ -23,9 +26,11 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
 
+
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
 
 # Tag model
 class Tag(models.Model):
@@ -34,19 +39,21 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+
 # Post model
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True, blank=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name="blog_posts")
     content = models.TextField()
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True) 
-    excerpt = models.CharField(max_length=255, blank=True) 
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    excerpt = models.CharField(max_length=255, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     tags = models.ManyToManyField(Tag, related_name="posts", blank=True)
-    
+
     class Meta:
         ordering = ["-created_on"]
 
@@ -56,7 +63,7 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        super().save(*args, **kwargs)  
+        super().save(*args, **kwargs)
 
     # Methods to calculate votes
     def total_votes(self):
@@ -67,6 +74,7 @@ class Post(models.Model):
 
     def downvote_count(self):
         return self.votes.filter(value=-1).count()
+
 
 # Comment model
 class Comment(models.Model):
@@ -84,6 +92,7 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment by {self.author} on {self.post.title}"
 
+
 # Vote model
 class Vote(models.Model):
     UPVOTE = 1
@@ -94,9 +103,9 @@ class Vote(models.Model):
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="votes")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name="votes")
     value = models.SmallIntegerField(choices=VOTE_CHOICES)
 
     class Meta:
         unique_together = ("user", "post")
-

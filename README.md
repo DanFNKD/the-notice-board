@@ -388,11 +388,30 @@ console.log("Portfolio 4 Project") - Works as expected, PASS.
 
 ### Code Validation
 
-#### Index
+#### HTML
+
+##### Index
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2F
 
-#### About
+##### About
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fabout%2F
+
+##### Create Post
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fcreate-post%2F
+
+##### Profile
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fprofile%2Fdanfnkd%2F
+
+##### Edit Profile
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fprofile%2Fedit%2F
+
+##### Logout
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Faccounts%2Flogout%2F
+
+##### Login
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Faccounts%2Flogin%2F
+
+#### Python Testing
 
 
 

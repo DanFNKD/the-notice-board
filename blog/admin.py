@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Post, Comment, Tag, Vote, UserProfile
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -13,9 +14,10 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
-    fields = ('title', 'slug', 'content', 'image', 'excerpt', 'tags', 'status', 'author')
+    fields = ('title', 'slug', 'content', 'image', 'excerpt', 'tags',
+              'status', 'author')
 
-# Register your models here.
+
 admin.site.register(UserProfile)
 admin.site.register(Comment)
 admin.site.register(Tag)

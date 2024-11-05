@@ -10,6 +10,7 @@ urlpatterns = [
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('profile/edit/', views.edit_profile, name='edit_profile'),
     path('profile/<str:username>/', views.profile_view, name='profile'),
-    path('post/<int:post_id>/vote/<slug:vote_value>/', views.vote, name='vote'),
+    path('post/<int:post_id>/vote/<slug:vote_value>/', views.vote,
+         name='vote'),
     path('post/delete/<int:post_id>/', views.delete_post, name='delete_post'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
