@@ -302,6 +302,40 @@ Provide registered users with notifications when someone either votes or comment
 
 ## Testing
 
+### Index
+|Test #|Test|Results|Evidence|
+| --- | --- | --- | --- |
+|1|Logo updates color when hovered|Pass|The logo color changes to red when hovered<br>
+|2|Login/Sign-up links are visible only to unauthenticated users|Pass|Login and sign-up links appear for unauthenticated users only and disappear when logged in<br>
+|3|Clicking the logo returns the user to the homepage|Pass|Clicking the logo consistently redirects the user to the homepage<br>
+|4|Posts appear in paginated format|Pass|Homepage displays posts in groups of 6 per page, with pagination controls appearing as expected<br>
+|5|Sort functionality correctly reorders posts|Pass|Posts reorder by selected option (date, popularity, title) upon selection<br>
+
+### Post_detail
+|Test #|Test|Results|Evidence|
+| --- | --- | --- | --- |
+|1|Admin delete button for post is visible to admins only|Pass|The delete button appears only for admin users viewing the post<br>
+|2|Comments are displayed with the correct user and date|Pass|Each comment shows the username, date, and body of the comment correctly<br>
+|3|Non-admins do not see the delete button for posts|Pass|The delete button for posts does not display for non-admin users<br>
+|4|Image associated with post displays consistently|Pass|Uploaded images display at the correct size on post detail pages<br>
+|5|Upvote and downvote buttons increase/decrease vote count correctly|Pass|Upvotes and downvotes adjust the vote count dynamically<br>
+
+### Profile
+|Test #|Test|Results|Evidence|
+| --- | --- | --- | --- |
+|1|Profile page displays correct user information|Pass|Logged-in user sees their username, profile picture, and bio<br>
+|2|Edit profile button is visible to logged-in users only|Pass|Edit button appears for users viewing their own profile<br>
+|3|Posts by the user display on their profile page|Pass|The profile page shows posts created by the user<br>
+|4|Correct handling of profile image uploads|Pass|New profile images display correctly after upload<br>
+
+### Search
+|Test #|Test|Results|Evidence|
+| --- | --- | --- | --- |
+|1|Search bar filters posts by title|Pass|Entering a search term filters posts by titles containing the term<br>
+|2|Sort function orders search results by date|Pass|Selecting "Date" in the sort dropdown reorders the search results by date, with the latest posts appearing first<br>
+|3|Sort function orders search results by popularity|Pass|Selecting "Popularity" reorders the search results, displaying posts with the highest vote count first<br>
+|4|Filter function displays posts matching the selected tag|Pass|Selecting a specific tag from the filter dropdown shows only posts associated with that tag<br>
+
 ### Fixed Bugs
 
 #### 1. Downvote counter
