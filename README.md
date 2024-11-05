@@ -80,27 +80,27 @@ All of my user stories were entered in a GitHub project - [Link](https://github.
 
 - (https://github.com/DanFNKD/the-notice-board/issues/10) - As a site user, I can view a limited number of posts per page so that I can browse content easily without being overwhelmed.
 - (https://github.com/DanFNKD/the-notice-board/issues/2) - As a site user I can create posts so that I can contribute to the site.
-- [7]([#7])(https://github.com/DanFNKD/the-notice-board/issues/7) - As a site admin, I can approve, edit or delete any post so that I can ensure all content meets site standards.
-- [8]([#8])(https://github.com/DanFNKD/the-notice-board/issues/8) - As a site user, I can add tags to my posts so that I can categorise content and make it easier for others to find.
-- [3]([#3])(https://github.com/DanFNKD/the-notice-board/issues/3) - As a registered user, I can leave comments on posts so that I can engage with other users and participate in discussions.
-- [12]([#12])(https://github.com/DanFNKD/the-notice-board/issues/12) - As a site admin I can approve, edit or delete comments so that I can ensure all content meets site standards.
-- [13]([#13])(https://github.com/DanFNKD/the-notice-board/issues/13) - As a site admin, I can create and set Tags so that site users can assign them to their posts.
-- [4]([#4])(https://github.com/DanFNKD/the-notice-board/issues/4) - As a registered user, I can upvote or downvote posts so that I can express my opinion on content and help highlight popular posts.
-- [18]([#18])(https://github.com/DanFNKD/the-notice-board/issues/18) - As a site user, I can upload images when creating posts, so that I can make my content more engaging.
-- [19]([#19])(https://github.com/DanFNKD/the-notice-board/issues/19) - As a site admin, I want to manage images within posts so that I can remove or replace images to maintain site standards where necessary.
-- [17]([#17])(https://github.com/DanFNKD/the-notice-board/issues/17) - As a registered user, I can be notified if my comment is awaiting approval so that I can understand why it is not immediately visible on the site.
+- (https://github.com/DanFNKD/the-notice-board/issues/7) - As a site admin, I can approve, edit or delete any post so that I can ensure all content meets site standards.
+- (https://github.com/DanFNKD/the-notice-board/issues/8) - As a site user, I can add tags to my posts so that I can categorise content and make it easier for others to find.
+- (https://github.com/DanFNKD/the-notice-board/issues/3) - As a registered user, I can leave comments on posts so that I can engage with other users and participate in discussions.
+- (https://github.com/DanFNKD/the-notice-board/issues/12) - As a site admin I can approve, edit or delete comments so that I can ensure all content meets site standards.
+- (https://github.com/DanFNKD/the-notice-board/issues/13) - As a site admin, I can create and set Tags so that site users can assign them to their posts.
+- (https://github.com/DanFNKD/the-notice-board/issues/4) - As a registered user, I can upvote or downvote posts so that I can express my opinion on content and help highlight popular posts.
+- (https://github.com/DanFNKD/the-notice-board/issues/18) - As a site user, I can upload images when creating posts, so that I can make my content more engaging.
+- (https://github.com/DanFNKD/the-notice-board/issues/19) - As a site admin, I want to manage images within posts so that I can remove or replace images to maintain site standards where necessary.
+- (https://github.com/DanFNKD/the-notice-board/issues/17) - As a registered user, I can be notified if my comment is awaiting approval so that I can understand why it is not immediately visible on the site.
 
 ### Epic: User Profiles & Account Management
 
-- [1]([#1])(https://github.com/DanFNKD/the-notice-board/issues/1) - As a site user, I can register for an account and login so that I can access additional features and interact with the site.
-- [6]([#6])(https://github.com/DanFNKD/the-notice-board/issues/6) - As a registered user, I can view and edit my profile so that I can share relevant information about myself with others.
-- [14]([#14])(https://github.com/DanFNKD/the-notice-board/issues/14) - As a registered user, I can view other users' profiles so that I can learn more about the authors of posts I read.
+- (https://github.com/DanFNKD/the-notice-board/issues/1) - As a site user, I can register for an account and login so that I can access additional features and interact with the site.
+- (https://github.com/DanFNKD/the-notice-board/issues/6) - As a registered user, I can view and edit my profile so that I can share relevant information about myself with others.
+- (https://github.com/DanFNKD/the-notice-board/issues/14) - As a registered user, I can view other users' profiles so that I can learn more about the authors of posts I read.
 
 ### Epic: Post Navigation & Discovery
 
-- [15]([#15])(https://github.com/DanFNKD/the-notice-board/issues/15) - As a site user, I can search for posts so that I can find specific content.
-- [16]([#16])(https://github.com/DanFNKD/the-notice-board/issues/16) - As a site user, I can sort and filter posts so that I can quickly find tailored content to suit my interests.
-- [20]([#20])(https://github.com/DanFNKD/the-notice-board/issues/20) - As a site user, I want to filter posts by tags so that I can quickly find content relevant to specific topics.
+- (https://github.com/DanFNKD/the-notice-board/issues/15) - As a site user, I can search for posts so that I can find specific content.
+- (https://github.com/DanFNKD/the-notice-board/issues/16) - As a site user, I can sort and filter posts so that I can quickly find tailored content to suit my interests.
+- (https://github.com/DanFNKD/the-notice-board/issues/20) - As a site user, I want to filter posts by tags so that I can quickly find content relevant to specific topics.
 
 ## Design
 
@@ -379,6 +379,16 @@ Epic: Post Navigation & Discovery
 (https://github.com/DanFNKD/the-notice-board/issues/16) - Users can sort and filter posts by date, popularity, and tags, enabling quick access to tailored content based on user preferences. - PASS
 
 https://github.com/DanFNKD/the-notice-board/issues/20) - Filtering by tags displays posts with the selected tag only, ensuring users can efficiently find content in their areas of interest. - PASS
+
+### Manual JS Testing
+
+I used almost 0 js in my project.
+
+console.log("Portfolio 4 Project") - Works as expected, PASS.
+
+### Code Validation
+
+
 
 ### Fixed Bugs
 
