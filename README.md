@@ -38,6 +38,11 @@ Welcome to The Notice Board, a platform for people to come together and discuss 
         + [Notifications](#notifications "Notifications")
 + [Technologies Used](#technologies-used "Technologies User")
 + [Testing](#testing "Testing")
+    + [Manual Testing](#manual-tests "Manual Testing")
+        + [Index](#index-2 "Index Testing")
+        + [Post_detail](#post_detail "Post_detail")
+        + [Profile](#profile "Profile")
+        + [Search](#search "Search")
     + [Fixed Bugs](#fixed-bugs "Fixed Bugs")
         + [Downvote counter](#1-downvote-counter "Downvote counter")
         + [Non registered users accessing profiles](#2-non-registered-users-accessing-profiles "Non registered users accessing profiles")
@@ -302,7 +307,9 @@ Provide registered users with notifications when someone either votes or comment
 
 ## Testing
 
-### Index
+### Manual Tests
+
+#### Index
 |Test #|Test|Results|Evidence|
 | --- | --- | --- | --- |
 |1|Logo updates color when hovered|Pass|The logo color changes to red when hovered<br>
@@ -311,7 +318,7 @@ Provide registered users with notifications when someone either votes or comment
 |4|Posts appear in paginated format|Pass|Homepage displays posts in groups of 6 per page, with pagination controls appearing as expected<br>
 |5|Sort functionality correctly reorders posts|Pass|Posts reorder by selected option (date, popularity, title) upon selection<br>
 
-### Post_detail
+#### Post_detail
 |Test #|Test|Results|Evidence|
 | --- | --- | --- | --- |
 |1|Admin delete button for post is visible to admins only|Pass|The delete button appears only for admin users viewing the post<br>
@@ -320,7 +327,7 @@ Provide registered users with notifications when someone either votes or comment
 |4|Image associated with post displays consistently|Pass|Uploaded images display at the correct size on post detail pages<br>
 |5|Upvote and downvote buttons increase/decrease vote count correctly|Pass|Upvotes and downvotes adjust the vote count dynamically<br>
 
-### Profile
+#### Profile
 |Test #|Test|Results|Evidence|
 | --- | --- | --- | --- |
 |1|Profile page displays correct user information|Pass|Logged-in user sees their username, profile picture, and bio<br>
@@ -328,13 +335,53 @@ Provide registered users with notifications when someone either votes or comment
 |3|Posts by the user display on their profile page|Pass|The profile page shows posts created by the user<br>
 |4|Correct handling of profile image uploads|Pass|New profile images display correctly after upload<br>
 
-### Search
+#### Search
 |Test #|Test|Results|Evidence|
 | --- | --- | --- | --- |
 |1|Search bar filters posts by title|Pass|Entering a search term filters posts by titles containing the term<br>
 |2|Sort function orders search results by date|Pass|Selecting "Date" in the sort dropdown reorders the search results by date, with the latest posts appearing first<br>
 |3|Sort function orders search results by popularity|Pass|Selecting "Popularity" reorders the search results, displaying posts with the highest vote count first<br>
 |4|Filter function displays posts matching the selected tag|Pass|Selecting a specific tag from the filter dropdown shows only posts associated with that tag<br>
+
+### User Story Testing
+
+[10] ([#10])(https://github.com/DanFNKD/the-notice-board/issues/10) - Pagination limits the number of posts displayed per page, making content browsing manageable without overwhelming the user. - PASS
+
+[2] ([#2])(https://github.com/DanFNKD/the-notice-board/issues/2) - Site user can create posts with a title, content, and tags, allowing them to contribute content to the site effectively. - PASS
+
+[11] ([#11])(https://github.com/DanFNKD/the-notice-board/issues/11) - Site user can edit and update their existing posts, ensuring they can correct mistakes and keep content up-to-date. - PASS
+
+[7] ([#7])(https://github.com/DanFNKD/the-notice-board/issues/7) - Admin has the ability to approve, edit, or delete posts, giving them control over content quality and site standards. - PASS
+
+[8] ([#8])(https://github.com/DanFNKD/the-notice-board/issues/8) - Site user can add tags to posts during creation and editing, allowing for organized categorization of content for easy discovery. - PASS
+
+[3] ([#3])(https://github.com/DanFNKD/the-notice-board/issues/3) - Registered user can submit comments on posts, enabling them to engage in discussions and interact with other users. - PASS
+
+[12] ([#12])(https://github.com/DanFNKD/the-notice-board/issues/12) - Admin can approve, edit, or delete comments, allowing them to monitor and maintain standards for user interactions. - PASS
+
+[13] ([#13])(https://github.com/DanFNKD/the-notice-board/issues/13) - Admin has the functionality to create and manage tags, ensuring users have relevant categories for their posts. - PASS
+
+[4] ([#4])(https://github.com/DanFNKD/the-notice-board/issues/4) - Registered user can upvote or downvote posts, helping highlight popular content and providing feedback on posts. - PASS
+
+[18] ([#18])(https://github.com/DanFNKD/the-notice-board/issues/18) - Site user can upload images during post creation, allowing them to make posts more visually engaging. - PASS
+
+[19] ([#19])(https://github.com/DanFNKD/the-notice-board/issues/19) - Admin has the ability to manage images within posts, ensuring that any inappropriate or off-standard images can be addressed. - PASS
+
+[17] ([#17])(https://github.com/DanFNKD/the-notice-board/issues/17) - Registered user receives notification if their comment is pending approval, so they understand the approval process and its impact on visibility. - PASS
+
+Epic: User Profiles & Account Management
+[1] ([#1])(https://github.com/DanFNKD/the-notice-board/issues/1) - Site user can register and log in to access additional features, providing them with a personalized experience and increased functionality. - PASS
+
+[6] ([#6])(https://github.com/DanFNKD/the-notice-board/issues/6) - Registered user can view and edit their profile information, giving them control over their displayed information and personal settings. - PASS
+
+[14] ([#14])(https://github.com/DanFNKD/the-notice-board/issues/14) - Registered user can view profiles of other users, allowing them to learn more about post authors and engage with their content. - PASS
+
+Epic: Post Navigation & Discovery
+[15] ([#15])(https://github.com/DanFNKD/the-notice-board/issues/15) - Search functionality allows users to find posts by keywords, making it easy to locate specific content of interest. - PASS
+
+[16] ([#16])(https://github.com/DanFNKD/the-notice-board/issues/16) - Users can sort and filter posts by date, popularity, and tags, enabling quick access to tailored content based on user preferences. - PASS
+
+[20] ([#20])(https://github.com/DanFNKD/the-notice-board/issues/20) - Filtering by tags displays posts with the selected tag only, ensuring users can efficiently find content in their areas of interest. - PASS
 
 ### Fixed Bugs
 
