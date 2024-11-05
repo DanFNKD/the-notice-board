@@ -345,7 +345,7 @@ Provide registered users with notifications when someone either votes or comment
 
 ### User Story Testing
 
-[10] ([#10])(https://github.com/DanFNKD/the-notice-board/issues/10) - Pagination limits the number of posts displayed per page, making content browsing manageable without overwhelming the user. - PASS
+(https://github.com/DanFNKD/the-notice-board/issues/10) - Pagination limits the number of posts displayed per page, making content browsing manageable without overwhelming the user. - PASS
 
 [2] ([#2])(https://github.com/DanFNKD/the-notice-board/issues/2) - Site user can create posts with a title, content, and tags, allowing them to contribute content to the site effectively. - PASS
 
