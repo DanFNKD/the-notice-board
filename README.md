@@ -413,7 +413,28 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.her
 
 #### Python Testing
 
+##### About App
 
+![admin](readme-media/python_testing/about-adminpy.png)
+![apps](readme-media/python_testing/about-appspy.png)
+![models](readme-media/python_testing/about-modelspy.png)
+![urls](readme-media/python_testing/about-urlspy.png)
+![views](readme-media/python_testing/about-viewspy.png)
+
+##### Blog App
+
+![admin](readme-media/python_testing/blog-adminpy.png)
+![apps](readme-media/python_testing/blog-appspy.png)
+![forms](readme-media/python_testing/blog-formspy.png)
+![models](readme-media/python_testing/blog-modelspy.png)
+![urls](readme-media/python_testing/blog-urlspy.png)
+![validator](readme-media/python_testing/blog-validatorspy.png)
+![views](readme-media/python_testing/blog-viewspy.png)
+
+##### The Notice Board App
+
+![settings](readme-media/python_testing/tnb-settingspy.png)
+![urls](readme-media/python_testing/tnb-urlspy.png)
 
 ### Fixed Bugs
 
