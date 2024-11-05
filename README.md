@@ -388,6 +388,12 @@ console.log("Portfolio 4 Project") - Works as expected, PASS.
 
 ### Code Validation
 
+#### Index
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2F
+
+#### About
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fabout%2F
+
 
 
 ### Fixed Bugs
