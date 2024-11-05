@@ -43,6 +43,12 @@ Welcome to The Notice Board, a platform for people to come together and discuss 
         + [Post_detail](#post_detail "Post_detail")
         + [Profile](#profile "Profile")
         + [Search](#search "Search")
+    + [User Story Testing](#user-story-testing "User Story Testing")
+    + [Code Validation](#code-validation "Code Validation")
+        + [Manual JS Testing](#manual-js-testing "Manual HS Testing")
+        + [HTML](#html "HTML")
+        + [CSS](#css "CSS")
+        + [Python](#python "Python")
     + [Fixed Bugs](#fixed-bugs "Fixed Bugs")
         + [Downvote counter](#1-downvote-counter "Downvote counter")
         + [Non registered users accessing profiles](#2-non-registered-users-accessing-profiles "Non registered users accessing profiles")
@@ -380,13 +386,13 @@ Epic: Post Navigation & Discovery
 
 https://github.com/DanFNKD/the-notice-board/issues/20) - Filtering by tags displays posts with the selected tag only, ensuring users can efficiently find content in their areas of interest. - PASS
 
-### Manual JS Testing
+### Code Validation
+
+#### Manual JS Testing
 
 I used almost 0 js in my project.
 
 console.log("Portfolio 4 Project") - Works as expected, PASS.
-
-### Code Validation
 
 #### HTML
 
@@ -411,7 +417,10 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.her
 ##### Login
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Faccounts%2Flogin%2F
 
-#### Python Testing
+#### CSS
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+#### Python
 
 ##### About App
 
