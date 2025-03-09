@@ -16,9 +16,12 @@
                     </p>
                 </div>
                 <!-- Display image -->
+                {% load static %}
+
                 {% if post.image %}
-                    <img src="{{ post.image.url }}" alt="Image for {{post.title }}" class="post-detail-image img-fluid mb-3">
+                    <img src="{% static 'images/' %}{{ post.image }}" alt="Image for {{ post.title }}" class="post-detail-image img-fluid mb-3">
                 {% endif %}
+
                 <!-- Post delete button for admins -->
                 {% if user.is_staff %}
                     <a href="{% url 'delete_post' post.id %}" class="btn btn-danger mt-3"
