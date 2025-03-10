@@ -21,6 +21,7 @@ body {
     color: #002147;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 /* Navbar Styles */
@@ -260,19 +261,25 @@ body {
     padding: 2rem 0;
     background-color: #F0F0F5;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .masthead-text {
     text-align: center;
     padding: 1rem;
+    max-width: 800px;
+    width: 100%;
 }
 
 /* Post Title (inside masthead) */
 .post-title {
-    padding-top: 1rem;
+    margin: 0;
+    padding: 1rem 0 0.5rem 0;
     color: #002147;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 /* Post Meta (author, date) */
@@ -285,6 +292,7 @@ body {
 /* Post Image */
 .post-detail-image {
     width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
@@ -296,5 +304,19 @@ body {
 @media (max-width: 991.98px) {
     #user-status {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .masthead-text {
+        padding: 0.5rem;
     }
 }
