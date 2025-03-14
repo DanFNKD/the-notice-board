@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     ".herokuapp.com",
+    "the-notice-board-cabc5e8a6edb.herokuapp.com",
 ]
 
 # Application definition
