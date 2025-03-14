@@ -14,7 +14,7 @@
 
             <!-- Post image (only if available) -->
             {% if post.image %}
-                <img src="{{ post.image.url }}" alt="Image for {{ post.title }}" class="post-detail-image img-fluid mb-3">
+            <img src="{% static 'images/' %}{{ post.image }}" alt="{{ post.title }}" class="img-fluid w-50">
             {% endif %}
         </div>
     </div>

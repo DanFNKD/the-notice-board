@@ -23,6 +23,8 @@ body {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     line-height: 1.3;
+    margin-left: 0;
+    margin-top: 0;
 }
 
 .post-subtitle {
@@ -31,17 +33,19 @@ body {
     margin-bottom: 1rem;
 }
 
-.post-detail-image {
+/* Post Image */
+.post-image {
     width: 100%;
-    height: auto;
-    max-height: 450px;
+    max-width: 500px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    margin-top: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
 }
 
-/* Responsive for mobile */
+/* Responsive */
 @media (max-width: 768px) {
     .post-title {
         font-size: 2rem;
@@ -50,9 +54,14 @@ body {
     .post-subtitle {
         font-size: 0.9rem;
     }
+
+    .post-image {
+        max-width: 100%;
+        height: 200px;
+    }
 }
 
-/* Navbar Styles */
+/* Navbar */
 .navbar {
     background-color: #F0F0F5 !important;
     display: flex;
@@ -84,7 +93,7 @@ body {
     background-color: #FFFFFF;
 }
 
-/* Card Styles */
+/* Cards */
 .card {
     border: none;
     background-color: transparent;
@@ -149,7 +158,7 @@ body {
     height: auto;
 }
 
-/* Pagination Styles */
+/* Pagination */
 .pagination {
     margin-top: 20px;
 }
@@ -168,7 +177,7 @@ body {
     color: #C8102E;
 }
 
-/* Button Styles */
+/* Buttons */
 .btn-signup,
 .btn-edit {
     background-color: #C8102E;
@@ -185,7 +194,7 @@ body {
     color: #fff;
 }
 
-/* Link Styles */
+/* Links */
 .link {
     color: #002147;
     text-decoration: none;
@@ -197,7 +206,7 @@ body {
     text-decoration: underline;
 }
 
-/* Miscellaneous Styles */
+/* Misc */
 .faded {
     color: rgb(172, 175, 175);
 }
@@ -206,7 +215,7 @@ body {
     color: rgb(222, 146, 168);
 }
 
-/* Form Styles */
+/* Form */
 #commentForm {
     width: 100%;
 }
@@ -238,7 +247,7 @@ body {
     padding-bottom: 20px;
 }
 
-/* Search, Sort, and Filter Styles */
+/* Search, Sort, Filter */
 .search-sort-filter {
     display: flex;
     justify-content: space-between;
@@ -279,7 +288,7 @@ body {
     outline: none;
 }
 
-/* Footer Styles */
+/* Footer */
 .footer a {
     text-decoration: none;
 }

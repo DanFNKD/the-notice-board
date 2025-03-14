@@ -59,7 +59,7 @@
                         <div class="card-body">
                             <div class="image-container">         
                                 {% if post.image %}
-                                <img src="{% static 'images/' %}{{ post.image }}" alt="{{ post.title }}" class="img-fluid card-img-top">
+                                <img src="{% static 'images/' %}{{ post.image }}" alt="{{ post.title }}" class="img-fluid">
                                 {% endif %}
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
