@@ -100,9 +100,7 @@ WSGI_APPLICATION = "thenoticeboard.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.parse(
-        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
-    )
+    "default": dj_database_url.parse(os.environ["DATABASE_URL"])
 }
 
 CSRF_TRUSTED_ORIGINS = [
