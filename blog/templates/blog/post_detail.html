@@ -7,14 +7,14 @@
     <!-- Post title, author, date -->
     <div class="row">
         <div class="col mb-4 mt-3">
-            <h1 class="post-title">{{ post.title }}</h1>
-            <p class="post-subtitle">
+            <h1 class="post-title text-center">{{ post.title }}</h1>
+            <p class="post-subtitle text-center">
                 <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a> | {{ post.created_on }}
             </p>
 
             <!-- Post image (only if available) -->
             {% if post.image %}
-            <img src="{% static 'images/' %}{{ post.image }}" alt="{{ post.title }}" class="img-fluid w-50">
+            <img src="{% static 'images/' %}{{ post.image }}" alt="{{ post.title }}" class="img-fluid w-50 d-block mx-auto">
             {% endif %}
         </div>
     </div>
@@ -55,7 +55,7 @@
 
     <!-- Displaying comment count -->
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <strong class="text-secondary">
                 <i class="far fa-comments" aria-label="Number of comments"></i> {{ comment_count }}
             </strong>
@@ -67,7 +67,7 @@
 
     <!-- Displaying comments -->
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <h3>Comments</h3>
             {% for comment in comments %}
                 <article class="mb-3 {% if not comment.approved and comment.author != user %} d-none {% endif %}">
@@ -91,23 +91,25 @@
         </div>
 
         <!-- Comment form -->
-        <div class="col-md-4 card mb-4 mt-3">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                    {% csrf_token %}
-                    {{ comment_form | crispy }}
-                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg" aria-label="Submit your comment">
-                        Submit
-                    </button>
-                </form>
-                {% else %}
-                <p class="text-muted">Please <a href="{{ login_url }}">log in</a> to leave a comment.</p>
-                {% endif %}
+        <div class="row justify-content-center"> <!-- Center the card horizontally -->
+            <div class="col-md-6 col-lg-4 card mb-4 mt-3 text-center"> <!-- Adjust width and keep responsive -->
+                <div class="card-body">
+                    {% if user.is_authenticated %}
+                        <h3>Leave a comment:</h3>
+                        <p>Posting as: {{ user.username }}</p>
+                        <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                            {% csrf_token %}
+                            {{ comment_form | crispy }}
+                            <button id="submitButton" type="submit" class="btn btn-signup btn-lg" aria-label="Submit your comment">
+                                Submit
+                            </button>
+                        </form>
+                    {% else %}
+                        <p class="text-muted">Please <a href="{{ login_url }}">log in</a> to leave a comment.</p>
+                    {% endif %}
+                </div>
             </div>
-        </div>
+        </div>        
     </div>
 </div>
 
