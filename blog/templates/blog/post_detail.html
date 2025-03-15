@@ -55,7 +55,7 @@
     <div class="row">
         <div class="col-12 text-center">
             <strong class="text-secondary">
-                <i class="far fa-comments" aria-label="Number of comments"></i> {{ comment_count }}
+                <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
         <div class="col-12">
@@ -70,7 +70,7 @@
             {% for comment in comments %}
                 <article class="mb-3 {% if not comment.approved and comment.author != user %} d-none {% endif %}">
                     <p class="font-weight-bold">
-                        <a href="{% url 'profile' comment.author.username %}">{{ comment.author }}</a>
+                        <h4> Comment by <a href="{% url 'profile' comment.author.username %}">{{ comment.author }}</a></h4>
                         <span class="font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote: 
