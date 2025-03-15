@@ -231,7 +231,7 @@ Cards display an overview of the posts, including name, excerpt and date/time/au
 Users can view the total page numbers at the bottom of the page.
 There is pagination, allowing users to navigate between pages to view posts.
 
-![ind 1](readme-media/site_images/index/index.png)
+![ind 2](readme-media/site_images/index/index2.png)
 
 #### Posts
 
@@ -419,7 +419,8 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.her
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Faccounts%2Flogin%2F
 
 #### CSS
-https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+
+![css](readme-media/w3css.png)
 
 #### Python
 
