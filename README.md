@@ -240,8 +240,8 @@ It has a title, confirms the author and when it was created.
 There posts upvotes/downvotes are displayed with FontAwesome Icons.
 Users can leave a comment.
 
-![post 1](readme-media/site_images/post/post1.png)
-![post 2](readme-media/site_images/post/post2.png)
+![post 3](readme-media/site_images/post/post3.png)
+![post 4](readme-media/site_images/post/post4.png)
 
 ##### Post Messages
 
