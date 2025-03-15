@@ -52,6 +52,7 @@ Welcome to The Notice Board, a platform for people to come together and discuss 
     + [Fixed Bugs](#fixed-bugs "Fixed Bugs")
         + [Downvote counter](#1-downvote-counter "Downvote counter")
         + [Non registered users accessing profiles](#2-non-registered-users-accessing-profiles "Non registered users accessing profiles")
+    + [Security Concerns](#security-concerns "Security Concerns")
 + [Deployment](#deployment "Deployment")
     + [Local Deployment](#local-deployment "Local Deployment")
     + [Remote Deployment](#remote-deployment "Remote Deployment")
@@ -454,6 +455,14 @@ When initially testing my vote counter, I noticed that a downvote would reduce t
 #### 2. Non registered users accessing profiles
 
 For the project, I ensured that non registered users could not view certain pages. They could however click the hyperlink on the post card and be directed to the user's profile. I implemented the following code to prevent this behaviour.
+
+### Security Concerns
+
+During development it was identified that sensitive database credentials were mistakenly committed to the repository. Upon discovering this issue, the following actions were taken to secure the project:
+
+- The .env file containing the environment variables, including DATABASE_URL, has been removed from the repository and added to .gitignore to prevent future tracking
+- The exposed database credentials were rotated immediately, and a new secure DATABASE_URL was generated.
+- All sensitive variables are now securely stored in environment variables both locally and on Heroku.
 
 ## Deployment
 
