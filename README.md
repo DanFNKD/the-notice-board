@@ -371,10 +371,10 @@ Provide registered users with notifications when someone either votes or comment
 
 (https://github.com/DanFNKD/the-notice-board/issues/19) - Admin has the ability to manage images within posts, ensuring that any inappropriate or off-standard images can be addressed. - PASS
 
-https://github.com/DanFNKD/the-notice-board/issues/17) - Registered user receives notification if their comment is pending approval, so they understand the approval process and its impact on visibility. - PASS
+(https://github.com/DanFNKD/the-notice-board/issues/17) - Registered user receives notification if their comment is pending approval, so they understand the approval process and its impact on visibility. - PASS
 
 Epic: User Profiles & Account Management
-https://github.com/DanFNKD/the-notice-board/issues/1) - Site user can register and log in to access additional features, providing them with a personalized experience and increased functionality. - PASS
+(https://github.com/DanFNKD/the-notice-board/issues/1) - Site user can register and log in to access additional features, providing them with a personalized experience and increased functionality. - PASS
 
 (https://github.com/DanFNKD/the-notice-board/issues/6) - Registered user can view and edit their profile information, giving them control over their displayed information and personal settings. - PASS
 
@@ -409,7 +409,7 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.her
 ##### Profile
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fprofile%2Fdanfnkd%2F
 
-##### Edit Profile
+##### Edit Profile
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Fprofile%2Fedit%2F
 
 ##### Logout
@@ -417,6 +417,12 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.her
 
 ##### Login
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthe-notice-board-cabc5e8a6edb.herokuapp.com%2Faccounts%2Flogin%2F
+
+##### HTML Validation Note
+
+When I ran my site through the W3C HTML validator, I saw a warning abut a self-closing input tag. This field is added automatically by Allauth when users are redirected to login before creating a post. I didn't add this myself. After looking into it, this doesn't break anything on the site including how it looks or works.
+
+Everything else passed validation without any issues.
 
 #### CSS
 
